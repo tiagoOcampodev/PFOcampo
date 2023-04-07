@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let curso of cursos$ | async">
+            <mat-card class="margin card">
+                <mat-card-header>
+                    <mat-card-title>{{ curso.nombre }}</mat-card-title>
+                    <mat-card-subtitle>Comision: {{ curso.comision }}</mat-card-subtitle>
+                </mat-card-header>
+                <img class="card-imagen" mat-card-image src="https://assets-global.website-files.com/5f15530648874c5f977e91c2/637ef1f502c0f83324cbf1ad_ABM%20College%20Web%20developer%20main.jpg" alt="">
+                <mat-card-content>
+                    <p class="text-profe">Impartido por <span>{{ curso.profesor.nombre }}</span></p>
+                    <p [appBooleanoEstilo]="curso.inscripcionAbierta">{{ curso.inscripcionAbierta | booleanoATexto:'Inscripciones abiertas':'Inscripciones cerradas' }}</p>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <ng-container>
+                        <button class="edit" mat-raised-button
+                            (click)="abrirDialog(curso)">
+                            Editar
+                        </button>
+                        <button class="delete" mat-button
+                            (click)="eliminarCurso(curso)">
+                            Eliminar
+                        </button>
+                    </ng-container>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

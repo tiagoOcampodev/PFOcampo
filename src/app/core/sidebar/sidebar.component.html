@@ -1,0 +1,14 @@
+<mat-nav-list class="nav">
+    <div class="logo py-4">
+      <h1>PFOcampo</h1>
+    </div>
+    <mat-divider></mat-divider>
+    <button mat-button (click)="redigirInicio()"><span>Inicio</span></button>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="cursos/listar">
+      <span>Lista Cursos</span>
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="cursos/agregar">
+        <span>Agregar Curso</span>
+      </a>
+    <a mat-button (click)="logout()"><span>Logout</span></a>
+</mat-nav-list>

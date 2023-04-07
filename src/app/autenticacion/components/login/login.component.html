@@ -1,0 +1,22 @@
+<div class="body">
+    <!-- LOGIN  -->
+    <div class="login">
+        <form [formGroup]="formulario" (ngSubmit)="login()">
+            <img width="50%" src="../../../../assets/img/user.png" alt="logo">
+            <h1>Login</h1>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input type="text" required matInput autocomplete="off" formControlName="usuario">
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput required autocomplete="off" formControlName="contrasena">
+            </mat-form-field>
+            <div class="col-md-2" style="margin-bottom: 15px; margin-left: 50px;">
+                <mat-slide-toggle formControlName="esAdmin"><span>Perfil de Administrador</span></mat-slide-toggle>
+            </div>
+            <br>
+            <button type="submit" class="ancho button" mat-raised-button [disabled]="formulario.invalid">Ingresar</button>
+        </form>
+    </div>
+</div>

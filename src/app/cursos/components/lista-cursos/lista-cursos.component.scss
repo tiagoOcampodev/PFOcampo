@@ -1,0 +1,31 @@
+.margin{
+    margin: 10px;
+}
+.card{
+    background-color: #343232;
+}
+mat-card-title{
+    color: #e68aff;
+}
+mat-card-subtitle{
+    color: antiquewhite;
+}
+.text-profe {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+
+    span {
+        color: #bd83ff;
+        font-weight:600 ;
+    }
+}
+.delete{
+    background-color: #bd83ff;
+    color: #414141;
+    margin-left: 5px;
+}
+.edit{
+    background-color: #414141;
+    color: white;
+}

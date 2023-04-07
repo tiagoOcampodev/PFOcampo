@@ -1,0 +1,20 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-drawer {
+  width: 260px;
+}
+mat-drawer-container {
+  height: 100%;
+  background-color: #3b3b3b;
+}
+
+mat-drawer {
+  background: #252525;
+}
