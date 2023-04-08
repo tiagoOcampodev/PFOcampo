@@ -25,7 +25,11 @@ export class CursosEffects{
             concatMap(({ curso }) => {
                 return this.cursos.agregarCurso(curso).pipe(
                     map((curso: Curso) => {
-                        this.snackBar.open(`${curso.nombre} agregado satisfactoriamente`);
+                        setTimeout(() => {
+                            this.snackBar.open(`${curso.nombre} agregado satisfactoriamente`,'',{
+                                duration:1000,
+                            });
+                        });
                         this.router.navigate(['cursos/listar']);
                         return cargarCursoState();
                     })

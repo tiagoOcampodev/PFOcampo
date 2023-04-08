@@ -9,6 +9,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { LoginService } from '../../services/login.service';
 import { cargarSesion } from '../../state/auth.actions';
 import { AuthState } from '../../state/auth.reducer';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private loginService: LoginService,
     private router: Router,
+    private snackBar: MatSnackBar,
     private authStore: Store<AuthState> 
   ){}
 
@@ -45,6 +47,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     this.suscripcion = this.loginService.login(usuario).subscribe((sesion: Sesion) => {
       this.authStore.dispatch(cargarSesion({ sesion: sesion }));
+      setTimeout(() => {
+        this.snackBar.open('Ingresando...','',{
+            duration:1000,
+        });
+      });
       this.router.navigate(['inicio']);
     });
   }

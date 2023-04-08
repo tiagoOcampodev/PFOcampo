@@ -41,7 +41,11 @@ export class ListaCursosComponent implements OnInit{
   }
 
   eliminarCurso(curso: Curso){
-    this.snackBar.open(`${curso.nombre} eliminado satisfactoriamente`);
+    setTimeout(() => {
+      this.snackBar.open(`${curso.nombre} eliminado satisfactoriamente`,'',{
+          duration:1000,
+      });
+    });
     this.store.dispatch(eliminarCursoState({ curso }));
   }
 
@@ -49,7 +53,11 @@ export class ListaCursosComponent implements OnInit{
     this.dialog.open(EditarCursoComponent, {
       data: curso
     }).afterClosed().subscribe((curso: Curso) => {
-      this.snackBar.open(`${curso.nombre} editado satisfactoriamente`)
+      setTimeout(() => {
+        this.snackBar.open(`${curso.nombre} editado satisfactoriamente`,'',{
+            duration:1000,
+        });
+      });
       this.cursos$ = this.cursoService.obtenerCursos();
     });
   }
